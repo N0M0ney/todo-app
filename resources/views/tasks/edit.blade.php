@@ -38,6 +38,11 @@
                             </div>
                             @enderror
                         </label>
+                        <select name="pet" id="pet-select">
+                            <option value="dog">犬</option>
+                            <option value="cat">猫</option>
+                            <option value="hamster">ハムスター</option>
+                        </select>
 
                         <div class="mt-8 w-full flex items-center justify-center gap-10">
                             <a href="/tasks" class="block shrink-0 underline underline-offset-2">
