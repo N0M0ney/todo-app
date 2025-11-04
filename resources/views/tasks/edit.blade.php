@@ -30,26 +30,28 @@
                             <input
                                 class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-4 pl-4 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                                 type="text" name="task_name" value="{{ $task->name }}" />
+
                             @error('task_name')
                             <div class="mt-3">
                                 <p class="text-red-500">
                                     {{ $message }}
+
+
                                 </p>
                             </div>
                             @enderror
                         </label>
-                        <select name="pet" id="pet-select">
-                            <option value="dog">犬</option>
-                            <option value="cat">猫</option>
-                            <option value="hamster">ハムスター</option>
+                        <select name="housework" id="select">
+                            <option value="laundry">洗濯</option>
+                            <option value="washing dishes">洗い物</option>
+                            <option value="cleaning">掃除</option>
                         </select>
 
                         <div class="mt-8 w-full flex items-center justify-center gap-10">
                             <a href="/tasks" class="block shrink-0 underline underline-offset-2">
                                 戻る
                             </a>
-                            <button type="submit"
-                                class="p-4 bg-sky-800 text-white w-full max-w-xs hover:bg-sky-900 transition-colors">
+                            <button type="submit" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                 編集する
                             </button>
                         </div>

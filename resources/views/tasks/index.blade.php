@@ -34,13 +34,14 @@
                             <div class="mt-3">
                                 <p class="text-red-500">
                                     {{ $message }}
+
                                 </p>
                             </div>
                             @enderror
                         </label>
 
                         <select name="housework" id="select">
-                            <option value="d">洗濯</option>
+                            <option value="laundry">洗濯</option>
                             <option value="washing dishes">洗い物</option>
                             <option value="cleaning">掃除</option>
                         </select>
@@ -63,6 +64,8 @@
                                         <th scope="col"
                                             class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
                                             タスク</th>
+                                        <th scope="col" class="category">
+                                            カテゴリー</th>
                                         <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                                             <span class="sr-only">Actions</span>
                                         </th>
@@ -74,8 +77,15 @@
                                         <td class="px-3 py-4 text-sm text-gray-500">
                                             <div>
                                                 {{ $item->name }}
+
                                             </div>
                                         </td>
+                                        <td>
+                                            <div>
+                                                {{ $item->category }}
+                                            </div>
+                                        </td>
+
                                         <td class="p-0 text-right text-sm font-medium">
                                             <div class="flex justify-end">
                                                 <div>
@@ -103,7 +113,8 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit"
-                                                            class="py-4 w-20 md:hover:bg-slate-200 transition-colors">削除</button>
+                                                            class="py-4 w-20 md:hover:bg-slate-200 transition-colors">
+                                                            削除</button>
                                                         <script>
                                                             function deleteTask() {
                                                                 if (confirm('本当に削除しますか？')) {

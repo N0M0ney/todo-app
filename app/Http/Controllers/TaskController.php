@@ -33,7 +33,7 @@ class TaskController extends Controller
   public function store(Request $request)
   {
 
-    dd($request->input('housework'));
+    // dd($request->input('housework'));
     $rules = [
       'task_name' => 'required|max:100',
     ];
@@ -46,7 +46,7 @@ class TaskController extends Controller
 
     //モデル->カラム名 = 値 で、データを割り当てる
     $task->name = $request->input('task_name');
-    $task->pet = $request->input('housework');
+    $task->category = $request->input('housework');
 
     //データベースに保存
     $task->save();
@@ -78,8 +78,9 @@ class TaskController extends Controller
 
   public function update(Request $request, $id)
   {
-
+    //$request->input('housework'));
     //「編集する」ボタンをおしたとき
+
     if ($request->status === null) {
       $rules = [
         'task_name' => 'required|max:100',
@@ -95,6 +96,11 @@ class TaskController extends Controller
 
       //モデル->カラム名 = 値 で、データを割り当てる
       $task->name = $request->input('task_name');
+      $task->category = $request->input('housework');
+
+
+
+
 
       //データベースに保存
       $task->save();
